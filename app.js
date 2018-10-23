@@ -9,9 +9,12 @@ const methodOverride = require('method-override');
 const passport       = require('passport');
 const session        = require('express-session');
 
-// Body Parser configuration
+// Body Parser / Cookie Parser / Method Override configuration
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(express.static(__dirname + '/public'));
+app.use(cookieParser('secret'));
+app.use(methodOverride('_method'));
 
 // Passport configuration
 app.use(session({ secret: 'ist411application', resave: true, saveUninitialized:true}));
