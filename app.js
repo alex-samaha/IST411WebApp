@@ -26,7 +26,7 @@ app.set('view engine', 'ejs');
 
 // Routers
 
-// Start the server
+// Set the port and start the server
 const port = 3000;
 app.listen(port, (err) => {
     if(!err) {
