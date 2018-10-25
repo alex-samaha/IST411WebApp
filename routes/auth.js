@@ -16,6 +16,8 @@ module.exports = function(app, passport) {
 
     app.get('/signup', authController.signup);
 
+    app.post('/signup', authController.signupUser);
+
     app.get('/login', authController.login);
 
     app.post('/login', passport.authenticate('local', {
@@ -23,9 +25,6 @@ module.exports = function(app, passport) {
             failureRedirect: '/login'
             }
         ));
-
-    app.post('/signup', authController.signupUser);
-
 
     app.get('/home', isLoggedIn, authController.home);
 
