@@ -25,7 +25,7 @@ exports.signupUser = function(req, res) {
         // using 'local' strategy which is just username and password
         else {
             passport.authenticate('local')(req, res, function() {
-                res.redirect('/home');
+                res.send('Successfully signed user up');
             });
         }
             
