@@ -10,7 +10,7 @@ function isLoggedIn(req, res, next) {
     res.redirect('/login');
 }
 
-module.exports = function(app, passport) {
+module.exports = function(app, passport, User) {
 
     app.get('/', authController.index);
 

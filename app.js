@@ -13,9 +13,15 @@ const passport       = require('passport');
 const session        = require('express-session');
 
 // Database Setup
-mongoose.connect("mongodb://localhost/411project");
+mongoose.connect("mongodb://localhost/411project", {useNewUrlParser: true});
 
 mongoose.Promise = global.Promise;
+
+
+
+// View / view engine setup
+app.set('views', './views');
+app.set('view engine', 'ejs');
 
 // Body Parser / Cookie Parser / Method Override configuration
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -32,12 +38,8 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());;
 
-// View / view engine setup
-app.set('views', './views');
-app.set('view engine', 'ejs');
-
 // Routers
-const authRouter = require('./routes/auth.js')(app, passport);
+const authRouter = require('./routes/auth.js')(app, passport, User);
 
 // Set the port and start the server
 const port = 3000;
