@@ -1,4 +1,0 @@
-{
-    "appService.defaultWebAppToDeploy": "/subscriptions/638d442b-b641-40a8-9042-142bf3e2418a/resourceGroups/ist411group2/providers/Microsoft.Web/sites/ist411group2",
-    "appService.deploySubpath": ""
-}
