@@ -35,6 +35,7 @@ passport.deserializeUser(User.deserializeUser());;
 // View / view engine setup
 app.set('views', './views');
 app.set('view engine', 'ejs');
+app.set('CreateAccountUI', 'ejs');
 
 // Routers
 const authRouter = require('./routes/auth.js')(app, passport);
