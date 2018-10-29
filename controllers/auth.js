@@ -8,7 +8,7 @@ exports.index = function(req, res) {
 };
 
 exports.signup = function(req, res) {
-    res.render('signup');
+    res.render('CreateAccountUI.ejs');
 };
 
 exports.signupUser = function(req, res) {
@@ -18,7 +18,7 @@ exports.signupUser = function(req, res) {
     function(err, user) {
         if(err) {
             console.log(err);
-            return res.render('signup');
+            return res.render('CreateAccountUI.ejs');
         }
         // if the user is created w/o error, redirect to secret page
         // passport.authenticate logs the user in
@@ -27,7 +27,7 @@ exports.signupUser = function(req, res) {
         // using 'local' strategy which is just username and password
         else {
             passport.authenticate('local')(req, res, function() {
-                res.send('Successfully signed user up');
+                res.redirect('/home');
             });
         }
             
@@ -35,7 +35,7 @@ exports.signupUser = function(req, res) {
 }
 
 exports.login = function(req, res) {
-    res.render('login');
+    res.render('loginUI.ejs');
 };
 
 exports.home = function(req, res) {

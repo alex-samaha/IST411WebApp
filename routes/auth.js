@@ -21,7 +21,7 @@ module.exports = function(app, passport, User) {
     app.get('/login', authController.login);
 
     app.post('/login', passport.authenticate('local', {
-            successRedirect: '/user',
+            successRedirect: '/home',
             failureRedirect: '/login'
             }
         ));
