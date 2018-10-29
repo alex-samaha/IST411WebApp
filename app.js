@@ -14,6 +14,21 @@ const session        = require('express-session');
 
 // Database Config
 const db = require('./config/keys').mongoURI;
+const MongoDBStore = require('connect-mongodb-session')(session);
+const store = new MongoDBStore({
+    uri: db,
+    collection: 'mySessions'
+  });
+store.on('connected', function() {
+    console.log('Store connected');
+    store.client; // The underlying MongoClient object from the MongoDB driver
+});
+
+// Catch errors
+store.on('error', function(error) {
+    assert.ifError(error);
+    assert.ok(false);
+});
 
 // Connect to MongoDB
 mongoose
@@ -40,7 +55,7 @@ app.use(cookieParser('secret'));
 app.use(methodOverride('_method'));
 
 // Passport configuration
-app.use(session({ secret: 'ist411application', resave: true, saveUninitialized:true}));
+app.use(session({ secret: 'ist411application', resave: true, saveUninitialized:true, store: store}));
 app.use(passport.initialize());
 app.use(passport.session());
 passport.use(new LocalStrategy(User.authenticate()));
