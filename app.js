@@ -12,8 +12,17 @@ const User           = require('./models/user');
 const passport       = require('passport');
 const session        = require('express-session');
 
+// Database Config
+const db = require('./config/keys').mongoURI;
+
+// Connect to MongoDB
+mongoose
+.connect(db)
+.then(() => console.log("MongoDB Connection Established"))
+.catch(err => console.log(err));
+
 // Database Setup
-mongoose.connect("mongodb://localhost/411project", {useNewUrlParser: true});
+// mongoose.connect("mongodb://localhost/411project", {useNewUrlParser: true});
 
 mongoose.Promise = global.Promise;
 
