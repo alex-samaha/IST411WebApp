@@ -67,7 +67,7 @@ const authRouter = require('./routes/auth.js')(app, passport, User);
 const surveyRouter = require('./routes/survey')(app, User)
 
 // Set the port and start the server
-const port = 3000;
+const port = process.env.PORT || 3000;
 app.listen(port, (err) => {
     if(!err) {
         console.log(`Website is running on port ${port}`);
