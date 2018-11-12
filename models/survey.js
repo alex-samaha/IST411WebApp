@@ -10,7 +10,8 @@ const SurveySchema = mongoose.Schema({
     deadline: Date,
     rewards: String,
     surveyLink: String,
-    comments: [{comment: String, username: String}]
+    comments: [{comment: String, username: String}],
+    username: String
 });
 
 

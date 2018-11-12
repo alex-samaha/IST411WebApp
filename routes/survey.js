@@ -18,5 +18,13 @@ module.exports = function(app, User) {
 
     app.post('/survey/create', isLoggedIn, surveyController.createSurvey);
 
+    app.get('/my-surveys', isLoggedIn, surveyController.showMySurveys);
+
+    app.get('/survey/:surveyTitle/delete', isLoggedIn, surveyController.deleteSurvey);
+
+    app.get('/survey/:surveyTitle/edit', isLoggedIn, surveyController.showEditSurvey);
+
+    app.put('/survey/:surveyTitle/edit', isLoggedIn, surveyController.editSurvey);
+
 
 }

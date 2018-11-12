@@ -33,7 +33,7 @@
   </header>
 
   <body>
-    <h1 style="text-align:center;">Surveys</h1>
+    <h1 style="text-align:center;">My Surveys</h1>
     <br>
     <br>    
     <% surveys.forEach(function(survey) { %>
@@ -65,12 +65,16 @@
         </div>
 
         <h2 style="margin-top: 25px">Links</h2>
-          <a href="<%= survey.surveyLink %>">Survey Link</a>
+          <a href="<%= survey.surveyLink %>">Survey     Link</a>
           &nbsp;
           <a href="/survey/<%= survey.title %>/comment">Add comment</a>
           &nbsp;
           <a href="/survey/<%= survey.title %>/comments">Show comments</a>
-
+          &nbsp;
+          <a href="/survey/<%= survey.title %>/delete">Delete</a>
+          &nbsp;
+          <a href="/survey/<%= survey.title %>/edit">Edit</a>
+          &nbsp;
           <hr>
       </div>
 
