@@ -37,41 +37,21 @@
             <div class="col-md-8">
               <div class="page-header">
                 <h1> Survey Comments </h1> <br>
-              </div> 
+              </div>
+              <% comments.forEach(function(comment) { %>
                <div class="comments-list">
                    <div class="comments">
                         <div class="comment-body">
                             
-                          <h4 class="user_name">Commenters username</h4>
-                          "users comment."
-                          
+                          <h4 class="user_name">User: <%= comment.username %></h4>
+                          <%= comment.comment %>
                         </div>
                         <br>
                     </div>
                </div>
-               <div class="comments-list">
-                <div class="comments">
-                     <div class="comment-body">
-                         
-                       <h4 class="user_name">Commenters username</h4>
-                       "users comment."
-                       
-                     </div>
-                     <br>
-                 </div>
-            </div>
-            <div class="comments-list">
-                <div class="comments">
-                     <div class="comment-body">
-                         
-                       <h4 class="user_name">Commenters username</h4>
-                       "users comment."
-                       
-                     </div>
-                     <br>
-                 </div>
-            </div>
-                
+
+               <% }); %>
+                <a href="/surveys" class="btn btn-primary">Back to Surveys</a>
             </div>
         </div>
     </div>

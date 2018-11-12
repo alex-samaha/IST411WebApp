@@ -33,37 +33,51 @@
   </header>
 
   <body>
-    <!--Survey Info-->
-    <div class = "container" style="margin-top:50px">
-      <h1 class="blog-title">Survey Title</h1>
-      <p class= "lead blog-description"> Study Title</p>
-      <div class="row" style="margin-top: 25px">
-        <div class="col-sm-6">
-          <h2>Researcher</h2>
-            <p>researcher(s) name</p>
+    <h1 style="text-align:center;">Surveys</h1>
+    <br>
+    <br>    
+    <% surveys.forEach(function(survey) { %>
+      <!--Survey Info-->
+      <div class = "container" style="margin-top:50px">
+        <h1 class="blog-title"><%= survey.title %></h1>
+        <p class= "lead blog-description"> Study Title</p>
+        <div class="row" style="margin-top: 25px">
+          <div class="col-sm-6">
+            <h2>Researcher</h2>
+              <p><%= survey.researcherName %></p>
+          </div>
+          <div class="col-sm-6">
+            <h2>Institution</h2>
+              <p><%= survey.institution %></p>
+          </div>
         </div>
-        <div class="col-sm-6">
-          <h2>Institution</h2>
-            <p>institutionName</p>
+        <h2 style="margin-top: 25px">Summary of Study</h2>
+          <p><%= survey.summary %></p>
+        <div class="row" style="margin-top: 35px">
+          <div class="col-sm-6">
+            <h2>Deadline</h2>
+              <p><%= survey.deadline %></p>
+          </div>
+          <div class="col-sm-6">
+            <h2>Rewards</h2>
+              <p><%= survey.rewards %></p>
+          </div>
         </div>
+
+        <h2 style="margin-top: 25px">Links</h2>
+          <a href="<%= survey.surveyLink %>">Link</a>
+          &nbsp;
+          <a href="/survey/<%= survey.title %>/comment">Add comment</a>
+          &nbsp;
+          <a href="/survey/<%= survey.title %>/comments">Show comments</a>
+
+          <hr>
       </div>
-      <h2 style="margin-top: 25px">Summary of Study</h2>
-        <p>paragraphs of summary paragraphs of summary paragraphs of summary paragraphs of summary</p>
-        <p>paragraphs of summary paragraphs of summary paragraphs of summary paragraphs of summary</p>
-        <p>paragraphs of summary paragraphs of summary paragraphs of summary paragraphs of summary</p>
-      <div class="row" style="margin-top: 35px">
-        <div class="col-sm-6">
-          <h2>Deadline</h2>
-            <p>date</p>
-        </div>
-        <div class="col-sm-6">
-          <h2>Rewards</h2>
-            <p>rewards</p>
-        </div>
-      </div>
-      <h2 style="margin-top: 25px">Link to Survey</h2>
-        <a href="#">link</a>
-    </div>
+
+      
+
+      <% }); %>
+
   </body>
 
 

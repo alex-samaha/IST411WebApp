@@ -34,12 +34,12 @@
   <body>
     <div class="container">
       <h2>Add Comment</h2><br>
-      <form>
+      <form action="/survey/<%= survey.title%>/comment" method="POST">
         <div class="form-group">
           <label for="comment">Comment:</label>
-          <textarea class="form-control" rows="5" id="comment"></textarea><br>
+          <textarea class="form-control" rows="5" name="comment"></textarea><br>
             <input class="btn btn-primary" type="submit" value="Submit">
-            <button type="back" formaction="surveyPage.html" class="btn">Back</button>
+            <a href="/surveys" class="btn btn-danger">Cancel</a>
         </div>
       </form>
     </div>

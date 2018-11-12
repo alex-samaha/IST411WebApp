@@ -12,6 +12,11 @@ function isLoggedIn(req, res, next) {
 
 module.exports = function(app, User) {
 
-    app.get('/survey', surveyController.showSurvey);
+    app.get('/surveys', isLoggedIn, surveyController.showSurveys);
+
+    app.get('/survey/create', isLoggedIn, surveyController.showSurveyCreate);
+
+    app.post('/survey/create', isLoggedIn, surveyController.createSurvey);
+
 
 }
