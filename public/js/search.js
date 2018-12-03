@@ -26,9 +26,10 @@ function getSearchResults(searchTerm) {
             $("#load-spinner").remove();
             loadResults(data);
         },
-        error: function(err) {
+        error: function(data) {
             console.log("Error");
-            console.log(err);
+            console.log(data);
+            loadResults(data);
         }
     });
 }
