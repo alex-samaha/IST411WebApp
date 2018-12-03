@@ -47,6 +47,13 @@ mongoose.Promise = global.Promise;
 app.set('views', './views');
 app.set('view engine', 'ejs');
 
+// CORS Stuff
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+    next();
+  });
+
 // Body Parser / Cookie Parser / Method Override configuration
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
