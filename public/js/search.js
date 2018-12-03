@@ -14,6 +14,7 @@ function getSearchResults(searchTerm) {
     let div = $('#search-results');
     let spinner = `<div class="loader" id="load-spinner"></div>`;
     div.append(spinner);
+    console.log("request sending");
     $.ajax({
         type: 'POST',
         url: '/research/papers',
@@ -26,6 +27,7 @@ function getSearchResults(searchTerm) {
             loadResults(data);
         },
         error: function(err) {
+            console.log("Error");
             console.log(err);
         }
     });
