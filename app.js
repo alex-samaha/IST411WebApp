@@ -66,6 +66,7 @@ passport.deserializeUser(User.deserializeUser());;
 const authRouter = require('./routes/auth.js')(app, passport, User);
 const surveyRouter = require('./routes/survey')(app, User);
 const commentRouter = require('./routes/comments')(app, User);
+const researchRouter = require('./routes/research')(app);
 
 // Set the port and start the server
 const port = process.env.PORT || 3000;

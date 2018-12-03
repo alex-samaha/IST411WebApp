@@ -16,5 +16,6 @@ module.exports = function(app, User) {
     app.post('/survey/:surveyTitle/comment', isLoggedIn, commentController.addComment);
 
     app.get('/survey/:surveyTitle/comments', isLoggedIn, commentController.showSurveyComments);
-    
+ 
+    app.get('/survey/:surveyTitle/comment/:comment', isLoggedIn, commentController.deleteComment);
 }
