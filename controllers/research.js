@@ -11,5 +11,9 @@ exports.getResearchPapers = function(req, res) {
     .then(resultsObj => {
         console.log(resultsObj);
         res.json(resultsObj);
+    })
+    .catch(err, function() {
+        console.log(err);
+        console.log("Error with getting the research papers");
     });
 };
