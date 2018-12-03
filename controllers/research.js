@@ -12,7 +12,7 @@ exports.getResearchPapers = function(req, res) {
         console.log(resultsObj);
         res.json(resultsObj);
     })
-    .catch(err, function() {
+    .catch(function(err) {
         console.log(err);
         console.log("Error with getting the research papers");
     });
