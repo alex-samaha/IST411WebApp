@@ -17,3 +17,15 @@ exports.getResearchPapers = function(req, res) {
         console.log("Error with getting the research papers");
     });
 };
+
+exports.test = function(req, res) {
+    scholar.search('thermodynamics')
+    .then(resultsObj => {
+        console.log(resultsObj);
+        res.json(resultsObj);
+    })
+    .catch(function(err) {
+        console.log(err);
+        console.log("Error with getting the research papers through the get request");
+    });
+}

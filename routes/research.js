@@ -15,5 +15,7 @@ module.exports = function(app) {
     app.get('/research', isLoggedIn, researchController.showSearchPage);
     
     app.post('/research/papers', isLoggedIn, researchController.getResearchPapers);
+    
+    app.get('/research/test', isLoggedIn, researchController.test);
 
 };
