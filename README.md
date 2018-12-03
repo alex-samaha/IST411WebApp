@@ -24,3 +24,15 @@ In this sprint, we have implemented user login and account creation functionalit
 | 15            | Edit Survey      | 8                     | 8                  | Done   |
 
 In sprint two, we deviated slightly changed plans and switched out the eligibility filter aspect of this and replaced it with deleting a survey, and updating a survey so that we could turn in a deliverable that implemented all elements of CRUD. Moving on, the additions in this sprint include allowing the user to create a survey, adding comments to a survey, deleting a survey, and having the user be able to edit any of their existing surveys. I reccomend creating a new account for this sprint because the database was modified and the user table may have undergone migrations. There is currently one test survey in the database, but more can be made. 
+
+
+## Sprint 3
+| Backlog #     | Task Description | Story Point Estimate  | Story Point Actual | Status |
+|:-------------:|:----------------:|:---------------------:|:------------------:|:------:|
+| 22            | Create Search UI | 12                    | 6                  | Done   |
+| 23            | Search Engine    | 12                    | 8                  | Done   |
+| 8             | Delete Comment UI| 8                     | 5                  | Done   |
+| 9             | Delete Comment   | 8                     | 5                  | Done   |
+
+
+In sprint three, there was not as many different features left to implement, but the main big one that we created was the search engine for researchers to utilize. The search engine runs a comprehensive google scholar search to look for research papers given keyword(s). The API that we are utililzing is still under development and so it is very slow at the moment, but does return useful results to the researcher. Unfortunately it can take up to a minute for the results to be returned, but it does a deep search and so more relevant papers are returned to the user. Additionally, we added the ability for a user to delete their own comments only so we almost have CRUD for two different entities.
