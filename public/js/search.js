@@ -9,7 +9,11 @@ $(document).ready(function() {
 
 
 function getSearchResults(searchTerm) {
-    var test = $('#results');
+    // Empty out the current search results
+    $('#search-results').empty();
+    let div = $('#search-results');
+    let spinner = `<div class="loader" id="load-spinner"></div>`;
+    div.append(spinner);
     $.ajax({
         type: 'POST',
         url: '/research/papers',
@@ -18,7 +22,7 @@ function getSearchResults(searchTerm) {
         },
         success: function(data) {
             console.log("Success");
-            console.log(data);
+            $("#load-spinner").remove();
             loadResults(data);
         },
         error: function(err) {
@@ -28,8 +32,6 @@ function getSearchResults(searchTerm) {
 }
 
 function loadResults(data) {
-    // Empty out the current search results
-    $('#search-results').empty();
 
     let resultsDiv = $('#search-results');
     let results = data.results
